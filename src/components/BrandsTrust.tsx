@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  "Apex Realty", "NovaTech", "GreenLeaf Co", "UrbanNest", "CloudPeak",
-  "PrimeEdge", "BlueSky Homes", "VeloCity", "Zenith Group", "CoreAxis",
-  "SwiftPath", "SilverOak",
+  "Nexus Drive", "Quantum Scale", "Vortex Media", "Apex Flow", "Stellar CRM",
+  "Veritas Ops", "CloudPeak", "PrimeEdge", "VeloCity", "Zenith Group",
+  "CoreAxis", "SwiftPath"
 ];
 
 const BrandsTrust = () => {

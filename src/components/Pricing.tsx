@@ -188,7 +188,7 @@ const Pricing = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          All plans include a 14-day money-back guarantee. Need something unique?{" "}
+          All plans require a 3-month minimum commitment. Spots are strictly limited to ensure quality delivery.{" "}
           <button onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")} className="text-primary hover:underline font-medium cursor-pointer">
             Let's talk →
           </button>
