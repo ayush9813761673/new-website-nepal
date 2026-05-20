@@ -23,9 +23,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/30"
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+        scrolled || isOpen
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/30"
           : "bg-transparent"
       }`}
     >
@@ -69,7 +69,7 @@ const Navbar = () => {
           {/* Right side */}
           <div className="hidden md:flex items-center gap-3">
             <Button
-              className="bg-gradient-primary hover:shadow-medium transition-all rounded-full px-6"
+              className="bg-gradient-primary animate-button-glow transition-all rounded-full px-6"
               onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")}
             >
               Schedule a Call
@@ -80,6 +80,7 @@ const Navbar = () => {
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -107,7 +108,7 @@ const Navbar = () => {
                 ))}
                 <div className="pt-2 px-4">
                   <Button 
-                    className="w-full bg-gradient-primary rounded-full"
+                    className="w-full bg-gradient-primary animate-button-glow rounded-full transition-all"
                     onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")}
                   >
                     Schedule a Call

@@ -82,20 +82,31 @@ export default function RadialOrbitalTimeline({
   };
 
   useEffect(() => {
-    let rotationTimer: ReturnType<typeof setInterval>;
+    let animationFrameId: number;
+    let lastTime: number | null = null;
+    const speed = 0.008; // degrees per ms
 
-    if (autoRotate) {
-      rotationTimer = setInterval(() => {
+    const animate = (time: number) => {
+      if (lastTime !== null) {
+        const deltaTime = time - lastTime;
         setRotationAngle((prev) => {
-          const newAngle = (prev + 0.3) % 360;
+          const newAngle = (prev + deltaTime * speed) % 360;
           return Number(newAngle.toFixed(3));
         });
-      }, 50);
+      }
+      lastTime = time;
+      if (autoRotate) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    };
+
+    if (autoRotate) {
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     return () => {
-      if (rotationTimer) {
-        clearInterval(rotationTimer);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
       }
     };
   }, [autoRotate]);

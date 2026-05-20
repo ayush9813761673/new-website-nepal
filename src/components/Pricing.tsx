@@ -151,7 +151,7 @@ const Pricing = () => {
                       onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")}
                       className={`w-full rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 group/btn ${
                         plan.popular
-                          ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]"
+                          ? "bg-primary text-primary-foreground hover:bg-primary/90 animate-button-glow"
                           : "border border-border bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary"
                       }`}
                     >

@@ -137,11 +137,11 @@ const ROICalculator = () => {
 
               <Button
                 size="lg"
-                className="w-full bg-gradient-primary hover:shadow-strong transition-all duration-300 text-base py-6 rounded-xl group"
+                className="w-full bg-gradient-primary animate-button-glow transition-all duration-300 text-sm sm:text-base py-4 sm:py-6 h-auto whitespace-normal rounded-xl group"
                 onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")}
               >
-                <Calendar className="w-5 h-5 mr-2" />
-                Claim Your Revenue — Book a Call
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 shrink-0" />
+                <span>Claim Your Revenue - Book a call</span>
               </Button>
             </div>
           </div>

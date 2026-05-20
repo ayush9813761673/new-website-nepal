@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -105,6 +106,10 @@ export default {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "1" }
         },
+        "button-glow": {
+          "0%, 100%": { boxShadow: "0 0 15px hsl(var(--primary)/0.5)" },
+          "50%": { boxShadow: "0 0 25px hsl(var(--primary)/0.8)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -113,8 +118,9 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "button-glow": "button-glow 2s ease-in-out infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

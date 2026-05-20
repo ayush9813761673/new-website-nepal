@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Linkedin, Twitter } from "lucide-react";
 
 const team = [
-  { name: "Ayush Yadav", role: "Founder & CEO", initials: "AY", bio: "10+ years in AI & automation strategy" },
-  { name: "Karan Sharma", role: "Lead Specialist", initials: "KS", bio: "Former ML lead at a Fortune 500 company" },
+  { name: "Ayush Yadav", role: "Founder & CEO", initials: "AY", bio: "10+ years in AI & automation strategy", linkedin: "https://www.linkedin.com/in/ayush-raj-yadav-062b17280" },
+  { name: "Karan Sharma", role: "Lead Specialist", initials: "KS", bio: "Former ML lead at a Fortune 500 company", linkedin: "#" },
 ];
 
 const MeetTeam = () => {
@@ -47,7 +47,7 @@ const MeetTeam = () => {
 
               {/* Social links */}
               <div className="flex justify-center gap-3">
-                <a href="#" className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
+                <a href={member.linkedin} target={member.linkedin !== "#" ? "_blank" : undefined} rel={member.linkedin !== "#" ? "noopener noreferrer" : undefined} onClick={(e) => member.linkedin === "#" && e.preventDefault()} className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                   <Linkedin className="w-3.5 h-3.5" />
                 </a>
                 <a href="#" className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">

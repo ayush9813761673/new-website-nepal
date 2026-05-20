@@ -104,7 +104,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
               size="lg"
-              className="bg-gradient-primary hover:shadow-strong transition-all duration-300 text-base px-8 py-6 rounded-full group"
+              className="bg-gradient-primary animate-button-glow transition-all duration-300 text-base px-8 py-6 rounded-full group"
               onClick={() => window.open("https://cal.com/ayush-yadav/15min?overlayCalendar=true", "_blank")}
             >
               <Calendar className="w-5 h-5 mr-2" />

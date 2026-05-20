@@ -38,13 +38,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm mb-4 text-foreground">Connect</h4>
             <div className="flex gap-3">
-              <a href="#" onClick={(e) => e.preventDefault()} className="w-9 h-9 rounded-full bg-card border border-border/30 hover:border-primary/30 hover:bg-primary/10 transition-all flex items-center justify-center text-muted-foreground hover:text-primary cursor-pointer">
+              <a href="https://www.linkedin.com/in/ayush-raj-yadav-062b17280" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-card border border-border/30 hover:border-primary/30 hover:bg-primary/10 transition-all flex items-center justify-center text-muted-foreground hover:text-primary cursor-pointer">
                 <Linkedin className="w-4 h-4" />
               </a>
               <a href="#" onClick={(e) => e.preventDefault()} className="w-9 h-9 rounded-full bg-card border border-border/30 hover:border-primary/30 hover:bg-primary/10 transition-all flex items-center justify-center text-muted-foreground hover:text-primary cursor-pointer">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" onClick={(e) => e.preventDefault()} className="w-9 h-9 rounded-full bg-card border border-border/30 hover:border-primary/30 hover:bg-primary/10 transition-all flex items-center justify-center text-muted-foreground hover:text-primary cursor-pointer">
+              <a href="mailto:support@flowstra.org" className="w-9 h-9 rounded-full bg-card border border-border/30 hover:border-primary/30 hover:bg-primary/10 transition-all flex items-center justify-center text-muted-foreground hover:text-primary cursor-pointer">
                 <Mail className="w-4 h-4" />
               </a>
             </div>

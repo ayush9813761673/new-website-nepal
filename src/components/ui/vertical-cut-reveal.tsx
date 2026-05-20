@@ -69,8 +69,10 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
 
     const splitIntoCharacters = (text: string): string[] => {
       if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
-        const segmenter = new (Intl as any).Segmenter("en", { granularity: "grapheme" });
-        return Array.from(segmenter.segment(text), ({ segment }: any) => segment);
+        type SegmenterType = new (locale: string, options: { granularity: string }) => { segment: (text: string) => Iterable<{ segment: string }> };
+        const Segmenter = (Intl as unknown as { Segmenter: SegmenterType }).Segmenter;
+        const segmenter = new Segmenter("en", { granularity: "grapheme" });
+        return Array.from(segmenter.segment(text), ({ segment }: { segment: string }) => segment);
       }
       return Array.from(text);
     };
@@ -117,7 +119,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
         }
         return Math.abs((staggerFrom as number) - index) * staggerDuration;
       },
-      [elements.length, staggerFrom, staggerDuration]
+      [elements, splitBy, staggerFrom, staggerDuration]
     );
 
     const startAnimation = useCallback(() => {
@@ -134,7 +136,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
       if (autoStart) {
         startAnimation();
       }
-    }, [autoStart]);
+    }, [autoStart, startAnimation]);
 
     const variants = {
       hidden: { y: reverse ? "-100%" : "100%" },
