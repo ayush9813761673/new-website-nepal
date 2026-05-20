@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 const team = [
-  { name: "Ayush Yadav", role: "Founder & CEO", initials: "AY", bio: "10+ years in AI & automation strategy", linkedin: "https://www.linkedin.com/in/ayush-raj-yadav-062b17280" },
-  { name: "Karan Sharma", role: "Lead Specialist", initials: "KS", bio: "Former ML lead at a Fortune 500 company", linkedin: "#" },
+  { name: "Ayush Yadav", role: "Founder & CEO", initials: "AY", bio: "10+ years in AI & automation strategy", linkedin: "https://www.linkedin.com/in/ayush-raj-yadav-062b17280", instagram: "https://www.instagram.com/flowstra.ai" },
+  { name: "Karan Sharma", role: "Lead Specialist", initials: "KS", bio: "Former ML lead at a Fortune 500 company", linkedin: "#", instagram: "https://www.instagram.com/flowstra.ai" },
 ];
 
 const MeetTeam = () => {
@@ -50,8 +50,8 @@ const MeetTeam = () => {
                 <a href={member.linkedin} target={member.linkedin !== "#" ? "_blank" : undefined} rel={member.linkedin !== "#" ? "noopener noreferrer" : undefined} onClick={(e) => member.linkedin === "#" && e.preventDefault()} className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                   <Linkedin className="w-3.5 h-3.5" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
-                  <Twitter className="w-3.5 h-3.5" />
+                <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
+                  <Instagram className="w-3.5 h-3.5" />
                 </a>
               </div>
             </motion.div>
